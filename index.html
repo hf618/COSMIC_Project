@@ -166,23 +166,22 @@
   <div class="container is-max-desktop">
     <div class="hero-body" style="display: flex; justify-content: space-between; align-items: center;">
       <div style="flex: 1; text-align: center; padding-right: 40px;">
-        <img src="static/images/PromptTuning.png" alt="First Image" style="width: 100%; max-width: 1000px;">
-        <h3 class="subtitle">(a) Test-time Prompt Tuning</h3>
+        <img src="static/images/PromptTuning.png" alt="Cache-based Methods" style="width: 100%; max-width: 1000px;">
+        <h3 class="subtitle">(a) Cache-based Methods</h3>
       </div>
 
       <div style="border-left: 2px solid #000; height: 250px;"></div>
 
       <div style="flex: 1; text-align: center; padding-left: 40px;">
-        <img src="static/images/TDA.png" alt="Second Image" style="width: 100%; max-width: 1000px;">
-        <h3 class="subtitle">(b) Training-free Dynamic Adapter (Ours)</h3>
+        <img src="static/images/TDA.png" alt="COSMIC" style="width: 100%; max-width: 1000px;">
+        <h3 class="subtitle">(b) COSMIC (Ours)</h3>
       </div>
     </div>
     
     <div class="method-overview-text has-text-justified" style="font-size: 17.6px;">
       <p>
-        <b>Comparison of our proposed Training-free Dynamic Adapter (TDA) with Test-time Prompt Tuning (TPT) and 
-          its enhancement DiffTPT</b>: both TPT and DiffTPT require significant computational resources to optimize the <i>learnable prompt</i> via backpropagation. 
-          TDA is a dynamic cache that is training-free without any backpropagation, making it efficient for test-time adaptation in various real-world scenarios.
+        <b>(a) In the previous cache-based method, the cache has only dull information with coarse-grained clip visual features and simple query way via similarity between samples and cached visual class centers. 
+          (b) In our COSMIC, the cache has diverse structural information via extra fine-grained DINOv2 visual features and effective query way via similarity between samples and meticulously designed hyper-class centers.
       </p>
   </div>
   </div>
@@ -198,14 +197,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Test-time adaptation with pre-trained vision-language models has attracted increasing attention for 
-            tackling distribution shifts during the test time. Though prior studies have achieved very promising performance, they involve intensive computation which is severely unaligned with test-time adaptation.
+          Recent vision-language models (VLMs) face significant challenges in test-time adaptation to novel domains. 
+            While cache-based methods show promise by leveraging historical information, 
+            they struggle with both caching unreliable feature-label pairs and indiscriminately using single-class information during querying, significantly compromising adaptation accuracy.
           </p>
           <p> 
-            We design TDA, a training-free dynamic adapter that enables effective and efficient test-time adaptation with vision-language models. TDA works with a lightweight key-value cache that maintains a dynamic queue with few-shot pseudo labels as values and the corresponding test-sample features as keys. 
-            Leveraging the key-value cache, TDA allows adapting to test data gradually via progressive pseudo label refinement which is super-efficient without incurring any backpropagation. 
-            In addition, we introduce negative pseudo labeling that alleviates the adverse impact of pseudo label noises by assigning pseudo labels to certain negative classes when the model is uncertain about its pseudo label predictions. 
-            Extensive experiments over two benchmarks demonstrate TDA’s superior effectiveness and efficiency as compared with the state-of-the-art.
+            To address these limitations, we propose \textbf{COSMIC} (\underline{C}lique-\underline{O}riented \underline{S}emantic \underline{M}ulti-space \underline{I}ntegration for \underline{C}LIP), 
+            a robust test-time adaptation framework that enhances adaptability through multi-granular, cross-modal semantic caching and graph-based querying mechanisms. 
+            Our framework introduces two key innovations: \textit{Dual Semantics Graph} (DSG) and \textit{Clique Guided Hyper-class} (CGH). 
+            The Dual Semantics Graph constructs complementary semantic spaces by incorporating textual features, coarse-grained CLIP features, and fine-grained DINOv2 features to capture rich semantic relationships. 
+            Building upon these dual graphs, the Clique Guided Hyper-class component leverages structured class relationships to enhance prediction robustness through correlated class selection. Extensive experiments demonstrate COSMIC's superior performance across multiple benchmarks, 
+            achieving significant improvements over state-of-the-art methods: 15.81% gain on out-of-distribution tasks and 5.33% on cross-domain generation with CLIP RN-50.
           </p>
         </div>
       </div>
