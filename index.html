@@ -240,124 +240,240 @@
   </div>
 </section>
 <section class="section">
+ <section class="section">
   <div class="container is-max-desktop">
     <div class="method-overview-text" style="text-align: justify; margin: auto; max-width: 100%; font-size: 17.6px;">
       <h2 class="title" style="text-align: center;">COSMIC Evaluation</h2>
-<p style="padding: 10px"></p>
-<p>We evaluated <b>COSMIC</b> alongside other state-of-the-art methods on ImageNet and its out-of-distribution variants. 
-The tables below showcase our comprehensive findings comparing both ResNet-50 and ViT-B/16 backbones.</p>
-<p style="padding: 20px"></p>
+      <p style="padding: 10px"></p>
+      <p>We evaluated <b>COSMIC</b> alongside other state-of-the-art methods on ImageNet and its out-of-distribution variants. 
+      The tables below showcase our comprehensive findings comparing both ResNet-50 and ViT-B/16 backbones.</p>
+      <p style="padding: 20px"></p>
 
-<div class="table-container" style="text-align: center; overflow-x: auto;">
-    <table class="subtitle" style="width:100%; margin-left:auto; margin-right:auto;min-width: 900px;">
-        <caption class="subtitle" style="caption-side: bottom; text-align: center; padding-top: 15px;">
+      <!-- First Table - ResNet-50 -->
+      <div class="table-container" style="text-align: center; overflow-x: auto; margin-bottom: 30px;">
+        <table class="subtitle" style="width: 100%; margin-left: auto; margin-right: auto; min-width: 1100px; border-collapse: collapse;">
+          <caption class="subtitle" style="caption-side: bottom; text-align: center; padding-top: 20px; margin-bottom: 10px;">
             <b>Top-1 accuracy (%) comparison on ImageNet and its OOD variants using CLIP with ResNet-50 backbone</b>
-        </caption>
-        <tbody>
+          </caption>
+          <tbody>
             <tr><td colspan="8" style="border-bottom: 2px solid #ddd;"></td></tr>
             <tr>
-                <th style="padding: 20px;">Method</th>
-                <th style="padding: 20px;">Adaptation</th>
-                <th style="padding: 15px;">ImageNet</th>
-                <th style="padding: 15px;">ImageNet-A</th>
-                <th style="padding: 15px;">ImageNet-V2</th>
-                <th style="padding: 15px;">ImageNet-R</th>
-                <th style="padding: 15px;">ImageNet-S</th>
-                <th style="padding: 15px;">Average</th>
-                <th style="padding: 15px;">OOD Avg</th>
+              <th style="padding: 12px 15px; text-align: left; min-width: 220px; white-space: nowrap;">Method</th>
+              <th style="padding: 12px 15px; text-align: left; min-width: 120px; white-space: nowrap;">Adaptation</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet-A</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet-V2</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet-R</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet-S</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">Average</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">OOD Avg</th>
             </tr>
             <tr><td colspan="8" style="border-bottom: 2px solid #ddd;"></td></tr>
             <tr>
-                <td style="padding: 15px;">CLIP-RN-50</td>
-                <td style="padding: 15px;">-</td>
-                <td style="padding: 15px;">58.16</td>
-                <td style="padding: 15px;">21.83</td>
-                <td style="padding: 15px;">51.41</td>
-                <td style="padding: 15px;">56.15</td>
-                <td style="padding: 15px;">33.37</td>
-                <td style="padding: 15px;">44.18</td>
-                <td style="padding: 15px;">40.69</td>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2103.00020">CLIP-RN-50</a></td>
+              <td style="padding: 12px 15px; text-align: left;">-</td>
+              <td style="padding: 12px 15px; text-align: center;">58.16</td>
+              <td style="padding: 12px 15px; text-align: center;">21.83</td>
+              <td style="padding: 12px 15px; text-align: center;">51.41</td>
+              <td style="padding: 12px 15px; text-align: center;">56.15</td>
+              <td style="padding: 12px 15px; text-align: center;">33.37</td>
+              <td style="padding: 12px 15px; text-align: center;">44.18</td>
+              <td style="padding: 12px 15px; text-align: center;">40.69</td>
             </tr>
             <tr>
-                <td style="padding: 10px;"><a href="https://arxiv.org/abs/2209.05520">CoOp</a> (IJCV'22)</td>
-                <td style="padding: 10px;">Few-shot</td>
-                <td style="padding: 10px;">63.33</td>
-                <td style="padding: 10px;">23.06</td>
-                <td style="padding: 10px;">55.40</td>
-                <td style="padding: 10px;">56.60</td>
-                <td style="padding: 10px;">34.67</td>
-                <td style="padding: 10px;">46.61</td>
-                <td style="padding: 10px;">42.43</td>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2209.05520">CoOp</a> (IJCV'22)</td>
+              <td style="padding: 12px 15px; text-align: left;">Few-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">63.33</td>
+              <td style="padding: 12px 15px; text-align: center;">23.06</td>
+              <td style="padding: 12px 15px; text-align: center;">55.40</td>
+              <td style="padding: 12px 15px; text-align: center;">56.60</td>
+              <td style="padding: 12px 15px; text-align: center;">34.67</td>
+              <td style="padding: 12px 15px; text-align: center;">46.61</td>
+              <td style="padding: 12px 15px; text-align: center;">42.43</td>
             </tr>
             <tr>
-                <td style="padding: 10px;"><a href="https://arxiv.org/abs/2203.05557">CoCoOp</a> (CVPR'22)</td>
-                <td style="padding: 10px;">Few-shot</td>
-                <td style="padding: 10px;">62.81</td>
-                <td style="padding: 10px;">23.32</td>
-                <td style="padding: 10px;">55.72</td>
-                <td style="padding: 10px;">57.74</td>
-                <td style="padding: 10px;">34.48</td>
-                <td style="padding: 10px;">46.81</td>
-                <td style="padding: 10px;">42.82</td>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2203.05557">CoCoOp</a> (CVPR'22)</td>
+              <td style="padding: 12px 15px; text-align: left;">Few-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">62.81</td>
+              <td style="padding: 12px 15px; text-align: center;">23.32</td>
+              <td style="padding: 12px 15px; text-align: center;">55.72</td>
+              <td style="padding: 12px 15px; text-align: center;">57.74</td>
+              <td style="padding: 12px 15px; text-align: center;">34.48</td>
+              <td style="padding: 12px 15px; text-align: center;">46.81</td>
+              <td style="padding: 12px 15px; text-align: center;">42.82</td>
             </tr>
             <tr>
-                <td style="padding: 10px;"><a href="https://arxiv.org/abs/2209.07511">TPT</a> (NeurIPS'22)</td>
-                <td style="padding: 10px;">Zero-shot</td>
-                <td style="padding: 10px;">60.74</td>
-                <td style="padding: 10px;">26.67</td>
-                <td style="padding: 10px;">54.70</td>
-                <td style="padding: 10px;">59.11</td>
-                <td style="padding: 10px;">35.09</td>
-                <td style="padding: 10px;">47.26</td>
-                <td style="padding: 10px;">43.89</td>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2209.07511">TPT</a> (NeurIPS'22)</td>
+              <td style="padding: 12px 15px; text-align: left;">Zero-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">60.74</td>
+              <td style="padding: 12px 15px; text-align: center;">26.67</td>
+              <td style="padding: 12px 15px; text-align: center;">54.70</td>
+              <td style="padding: 12px 15px; text-align: center;">59.11</td>
+              <td style="padding: 12px 15px; text-align: center;">35.09</td>
+              <td style="padding: 12px 15px; text-align: center;">47.26</td>
+              <td style="padding: 12px 15px; text-align: center;">43.89</td>
             </tr>
             <tr>
-                <td style="padding: 10px;"><a href="https://arxiv.org/abs/2308.06038">DiffTPT</a> (ICCV'23)</td>
-                <td style="padding: 10px;">Zero-shot</td>
-                <td style="padding: 10px;">60.80</td>
-                <td style="padding: 10px;">31.06</td>
-                <td style="padding: 10px;">55.80</td>
-                <td style="padding: 10px;">58.80</td>
-                <td style="padding: 10px;">37.10</td>
-                <td style="padding: 10px;">48.71</td>
-                <td style="padding: 10px;">45.69</td>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2308.06038">DiffTPT</a> (ICCV'23)</td>
+              <td style="padding: 12px 15px; text-align: left;">Zero-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">60.80</td>
+              <td style="padding: 12px 15px; text-align: center;">31.06</td>
+              <td style="padding: 12px 15px; text-align: center;">55.80</td>
+              <td style="padding: 12px 15px; text-align: center;">58.80</td>
+              <td style="padding: 12px 15px; text-align: center;">37.10</td>
+              <td style="padding: 12px 15px; text-align: center;">48.71</td>
+              <td style="padding: 12px 15px; text-align: center;">45.69</td>
             </tr>
             <tr>
-                <td style="padding: 10px;"><a href="https://arxiv.org/abs/2403.13822">TDA</a> (CVPR'24)</td>
-                <td style="padding: 10px;">Zero-shot</td>
-                <td style="padding: 10px;">61.35</td>
-                <td style="padding: 10px;">30.29</td>
-                <td style="padding: 10px;">55.54</td>
-                <td style="padding: 10px;">62.58</td>
-                <td style="padding: 10px;">38.12</td>
-                <td style="padding: 10px;">49.58</td>
-                <td style="padding: 10px;">46.63</td>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2403.13822">TDA</a> (CVPR'24)</td>
+              <td style="padding: 12px 15px; text-align: left;">Zero-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">61.35</td>
+              <td style="padding: 12px 15px; text-align: center;">30.29</td>
+              <td style="padding: 12px 15px; text-align: center;">55.54</td>
+              <td style="padding: 12px 15px; text-align: center;">62.58</td>
+              <td style="padding: 12px 15px; text-align: center;">38.12</td>
+              <td style="padding: 12px 15px; text-align: center;">49.58</td>
+              <td style="padding: 12px 15px; text-align: center;">46.63</td>
             </tr>
             <tr>
-                <td style="padding: 10px;"><a href="https://arxiv.org/abs/2403.18937">DMN</a> (CVPR'24)</td>
-                <td style="padding: 10px;">Zero-shot</td>
-                <td style="padding: 10px;">63.87</td>
-                <td style="padding: 10px;">28.57</td>
-                <td style="padding: 10px;">56.12</td>
-                <td style="padding: 10px;">61.44</td>
-                <td style="padding: 10px;">39.84</td>
-                <td style="padding: 10px;">49.97</td>
-                <td style="padding: 10px;">46.49</td>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2403.18937">DMN</a> (CVPR'24)</td>
+              <td style="padding: 12px 15px; text-align: left;">Zero-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">63.87</td>
+              <td style="padding: 12px 15px; text-align: center;">28.57</td>
+              <td style="padding: 12px 15px; text-align: center;">56.12</td>
+              <td style="padding: 12px 15px; text-align: center;">61.44</td>
+              <td style="padding: 12px 15px; text-align: center;">39.84</td>
+              <td style="padding: 12px 15px; text-align: center;">49.97</td>
+              <td style="padding: 12px 15px; text-align: center;">46.49</td>
             </tr>
-            <tr style="background-color:#e6e6e6">
-                <td style="padding: 10px;"><b>COSMIC (Ours)</b></td>
-                <td style="padding: 10px;"><b>Zero-shot</b></td>
-                <td style="padding: 10px;"><b>75.19±0.89</b></td>
-                <td style="padding: 10px;"><b>49.07±0.06</b></td>
-                <td style="padding: 10px;"><b>63.81±0.39</b></td>
-                <td style="padding: 10px;"><b>79.87±0.08</b></td>
-                <td style="padding: 10px;"><b>56.44±0.34</b></td>
-                <td style="padding: 10px;"><b>64.88±0.22</b></td>
-                <td style="padding: 10px;"><b>62.30±0.05</b></td>
+            <tr style="background-color: #f5f5f5;">
+              <td style="padding: 12px 15px; text-align: left;"><b>COSMIC (Ours)</b></td>
+              <td style="padding: 12px 15px; text-align: left;"><b>Zero-shot</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>75.19±0.89</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>49.07±0.06</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>63.81±0.39</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>79.87±0.08</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>56.44±0.34</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>64.88±0.22</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>62.30±0.05</b></td>
             </tr>
-        </tbody>
-    </table>
-</div>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Second Table - ViT-B/16 -->
+      <div class="table-container" style="text-align: center; overflow-x: auto;">
+        <table class="subtitle" style="width: 100%; margin-left: auto; margin-right: auto; min-width: 1100px; border-collapse: collapse;">
+          <caption class="subtitle" style="caption-side: bottom; text-align: center; padding-top: 20px; margin-bottom: 10px;">
+            <b>Top-1 accuracy (%) comparison on ImageNet and its OOD variants using CLIP with ViT-B/16 backbone</b>
+          </caption>
+          <tbody>
+            <tr><td colspan="8" style="border-bottom: 2px solid #ddd;"></td></tr>
+            <tr>
+              <th style="padding: 12px 15px; text-align: left; min-width: 220px; white-space: nowrap;">Method</th>
+              <th style="padding: 12px 15px; text-align: left; min-width: 120px; white-space: nowrap;">Adaptation</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet-A</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet-V2</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet-R</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">ImageNet-S</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">Average</th>
+              <th style="padding: 12px 15px; text-align: center; min-width: 100px;">OOD Avg</th>
+            </tr>
+            <tr><td colspan="8" style="border-bottom: 2px solid #ddd;"></td></tr>
+            <tr>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2103.00020">CLIP-ViT-B/16</a></td>
+              <td style="padding: 12px 15px; text-align: left;">-</td>
+              <td style="padding: 12px 15px; text-align: center;">66.73</td>
+              <td style="padding: 12px 15px; text-align: center;">47.87</td>
+              <td style="padding: 12px 15px; text-align: center;">60.86</td>
+              <td style="padding: 12px 15px; text-align: center;">73.98</td>
+              <td style="padding: 12px 15px; text-align: center;">46.09</td>
+              <td style="padding: 12px 15px; text-align: center;">59.11</td>
+              <td style="padding: 12px 15px; text-align: center;">57.20</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2209.05520">CoOp</a> (IJCV'22)</td>
+              <td style="padding: 12px 15px; text-align: left;">Few-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">71.51</td>
+              <td style="padding: 12px 15px; text-align: center;">49.71</td>
+              <td style="padding: 12px 15px; text-align: center;">64.20</td>
+              <td style="padding: 12px 15px; text-align: center;">75.21</td>
+              <td style="padding: 12px 15px; text-align: center;">47.99</td>
+              <td style="padding: 12px 15px; text-align: center;">61.72</td>
+              <td style="padding: 12px 15px; text-align: center;">59.28</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2203.05557">CoCoOp</a> (CVPR'22)</td>
+              <td style="padding: 12px 15px; text-align: left;">Few-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">71.02</td>
+              <td style="padding: 12px 15px; text-align: center;">50.63</td>
+              <td style="padding: 12px 15px; text-align: center;">64.07</td>
+              <td style="padding: 12px 15px; text-align: center;">76.18</td>
+              <td style="padding: 12px 15px; text-align: center;">48.75</td>
+              <td style="padding: 12px 15px; text-align: center;">62.13</td>
+              <td style="padding: 12px 15px; text-align: center;">59.91</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2209.07511">TPT</a> (NeurIPS'22)</td>
+              <td style="padding: 12px 15px; text-align: left;">Zero-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">68.98</td>
+              <td style="padding: 12px 15px; text-align: center;">54.77</td>
+              <td style="padding: 12px 15px; text-align: center;">63.45</td>
+              <td style="padding: 12px 15px; text-align: center;">77.06</td>
+              <td style="padding: 12px 15px; text-align: center;">47.94</td>
+              <td style="padding: 12px 15px; text-align: center;">62.44</td>
+              <td style="padding: 12px 15px; text-align: center;">60.81</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2308.06038">DiffTPT</a> (ICCV'23)</td>
+              <td style="padding: 12px 15px; text-align: left;">Zero-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">70.30</td>
+              <td style="padding: 12px 15px; text-align: center;">55.68</td>
+              <td style="padding: 12px 15px; text-align: center;">65.10</td>
+              <td style="padding: 12px 15px; text-align: center;">75.00</td>
+              <td style="padding: 12px 15px; text-align: center;">46.80</td>
+              <td style="padding: 12px 15px; text-align: center;">62.58</td>
+              <td style="padding: 12px 15px; text-align: center;">60.65</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2403.13822">TDA</a> (CVPR'24)</td>
+              <td style="padding: 12px 15px; text-align: left;">Zero-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">69.51</td>
+              <td style="padding: 12px 15px; text-align: center;">60.11</td>
+              <td style="padding: 12px 15px; text-align: center;">64.67</td>
+              <td style="padding: 12px 15px; text-align: center;">80.24</td>
+              <td style="padding: 12px 15px; text-align: center;">50.54</td>
+              <td style="padding: 12px 15px; text-align: center;">65.01</td>
+              <td style="padding: 12px 15px; text-align: center;">63.89</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 15px; text-align: left;"><a href="https://arxiv.org/abs/2403.18937">DMN</a> (CVPR'24)</td>
+              <td style="padding: 12px 15px; text-align: left;">Zero-shot</td>
+              <td style="padding: 12px 15px; text-align: center;">72.25</td>
+              <td style="padding: 12px 15px; text-align: center;">58.28</td>
+              <td style="padding: 12px 15px; text-align: center;">65.17</td>
+              <td style="padding: 12px 15px; text-align: center;">78.55</td>
+              <td style="padding: 12px 15px; text-align: center;">53.20</td>
+              <td style="padding: 12px 15px; text-align: center;">65.49</td>
+              <td style="padding: 12px 15px; text-align: center;">63.80</td>
+            </tr>
+            <tr style="background-color: #f5f5f5;">
+              <td style="padding: 12px 15px; text-align: left;"><b>COSMIC (Ours)</b></td>
+              <td style="padding: 12px 15px; text-align: left;"><b>Zero-shot</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>78.19±0.56</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>73.32±0.32</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>69.62±0.19</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>85.60±0.12</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>62.79±0.10</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>73.90±0.05</b></td>
+              <td style="padding: 12px 15px; text-align: center;"><b>72.83±0.10</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
 <p style="padding: 20px"></p>
 
